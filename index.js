@@ -30,7 +30,7 @@ app.get('/',function(req,res){
 
 });
 
-app.post('/colleges/total', function (req, res) {
+app.all('/colleges/total', function (req, res) {
 
 	var str = {
 		total : colleges.length
@@ -41,7 +41,7 @@ app.post('/colleges/total', function (req, res) {
 })
 
 
-app.post('/colleges/search', function (req, res) {
+app.all('/colleges/search', function (req, res) {
 
 	var keyword = req.headers.keyword.toLowerCase();
 	var result = [];
@@ -64,7 +64,7 @@ app.post('/colleges/search', function (req, res) {
 
 })
 
-app.post('/colleges/state', function (req, res) {
+app.all('/colleges/state', function (req, res) {
 
 	var state = req.headers.state.toLowerCase();
 	var offset = req.headers.offset;
@@ -102,7 +102,7 @@ app.post('/colleges/state', function (req, res) {
 })
 
 
-app.post('/colleges/district', function (req, res) {
+app.all('/colleges/district', function (req, res) {
 
 	var district = req.headers.district.toLowerCase();
 	var offset = req.headers.offset;
@@ -159,7 +159,7 @@ Array.prototype.contains = function(obj) {
     return false;
 }
 
-app.post('/allstates', function (req, res) {
+app.all('/allstates', function (req, res) {
 
 	var result = [];		
 
@@ -180,7 +180,7 @@ app.post('/allstates', function (req, res) {
 })
 
 
-app.post('/districts', function (req, res) {
+app.all('/districts', function (req, res) {
 
 	var state = req.headers.state.toLowerCase();
 	var result = [];
