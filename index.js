@@ -2,9 +2,12 @@ var express = require('express');
 var csv = require('csv');
 var app = express();
 const fs = require("fs");
+const cors = require("cors")
 
 const PORT = process.env.PORT || 3000;
-
+app.use(cors({
+  origin: 'http://localhost:3000'
+}));
 
 var colleges; 
 
